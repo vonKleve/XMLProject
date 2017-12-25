@@ -2,6 +2,9 @@
 
 #include <utility>
 #include "AbstractInterval.h"
+#include "MillerRabinTest.h"
+
+#define TESTS_AMOUNT 20
 
 class Interval : public AbstractInterval
 {
@@ -14,7 +17,7 @@ public:
 	void SetLow(uint low) override;
 	void SetHigh(uint high) override;
 
-	void GeneratePrimes() override;
+	void GeneratePrimes(ThreadSafeSet<uint> &) override;
 
 	uint GetLow() override;
 	uint GetHigh() override;

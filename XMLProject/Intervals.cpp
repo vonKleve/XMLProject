@@ -2,11 +2,11 @@
 #include "Intervals.h"
 
 
-void Intervals::GeneratePrimes()
+void Intervals::GeneratePrimes(ThreadSafeSet<uint> & set)
 {
 	for (auto it : intervals_)
 	{
-		it->GeneratePrimes();
+		it->GeneratePrimes(set);
 	}
 }
 
@@ -31,12 +31,17 @@ void Intervals::Set(const int index, std::pair<uint, uint> npair)
 	intervals_.at(index)->SetHigh(npair.second);
 }
 
-AbstractInterval& Intervals::Get(const int index)
+AbstractInterval& Intervals::At(const int index)
 {
 	return *intervals_.at(index);
 }
 
-size_t Intervals::GetSize()
+size_t Intervals::Size()
 {
 	return intervals_.size();
+}
+
+void WrapperGeneratePrimes(Intervals & intrls, int index, ThreadSafeSet<uint>& set)
+{
+	intrls.At(index).GeneratePrimes(set);
 }

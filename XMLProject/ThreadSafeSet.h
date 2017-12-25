@@ -29,7 +29,7 @@ public:
 	std::string ToString()
 	{
 		std::unique_lock<std::mutex> mlock(mutex_);
-		string res = "";
+		std::string res = "";
 		for (auto it : set_)
 		{
 			res += std::to_string(it) + " ";

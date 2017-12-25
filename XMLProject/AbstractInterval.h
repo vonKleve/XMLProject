@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include "ThreadSafeSet.h"
 
 typedef unsigned int uint;
 
@@ -16,6 +17,6 @@ public:
 	virtual uint GetLow() { return 0; };
 	virtual uint GetHigh() { return 0; };
 
-	virtual void GeneratePrimes() = 0;
+	virtual void GeneratePrimes(ThreadSafeSet<uint> &) = 0;
 };
 

@@ -2,9 +2,11 @@
 
 #include <random>
 #include <limits.h>
-#include "APArithmetic.h"
+#include "BigInteger.h"
 
 #define MIN 2
+
+#include <iostream>
 
 class MillerRabinTest
 {
@@ -17,9 +19,7 @@ class MillerRabinTest
 
 		int a = distr(gen);
 		long long x = pow(a, d);
-		x %= n;
-
-
+		x = x % n;
 
 		if (x == 1 || x == n - 1)
 		{
@@ -41,7 +41,7 @@ public:
 	MillerRabinTest() {};
 	~MillerRabinTest() {};
 
-	static bool IsPrime(unsigned int tested, const unsigned int k)
+	static bool IsProbablePrime(unsigned int tested, const unsigned int k)
 	{
 		if (tested == 2 || tested == 3)
 		{

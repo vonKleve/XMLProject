@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AbstractInterval.h" />
-    <ClInclude Include="APArithmetic.h" />
+    <ClInclude Include="BigInteger.h" />
     <ClInclude Include="MillerRabinTest.h" />
     <ClInclude Include="ThreadSafeSet.h" />
     <ClInclude Include="Interval.h" />
@@ -152,12 +152,13 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="WorkManager.h" />
     <ClInclude Include="XmlParser.h" />
     <ClInclude Include="XmlWriter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AbstractInterval.cpp" />
-    <ClCompile Include="APArithmetic.cpp" />
+    <ClCompile Include="BigInteger.cpp" />
     <ClCompile Include="MillerRabinTest.cpp" />
     <ClCompile Include="ThreadSafeSet.cpp" />
     <ClCompile Include="Interval.cpp" />
@@ -169,6 +170,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="WorkManager.cpp" />
     <ClCompile Include="XmlParser.cpp" />
     <ClCompile Include="XMLProject.cpp" />
     <ClCompile Include="XmlWriter.cpp" />

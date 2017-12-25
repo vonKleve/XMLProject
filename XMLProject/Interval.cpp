@@ -12,8 +12,16 @@ void Interval::SetHigh(uint high)
 	high_ = high;
 }
 
-void Interval::GeneratePrimes()
+void Interval::GeneratePrimes(ThreadSafeSet<uint> & set)
 {
+	MillerRabinTest prTest;
+	for (uint i = low_; i < high_; i++)
+	{
+		if (prTest.IsProbablePrime(i, TESTS_AMOUNT))
+		{
+			set.Insert(i);
+		}
+	}
 }
 
 uint Interval::GetLow()

@@ -31,7 +31,6 @@ public:
 
 	void LoadFile();
 	void Read();
-	void Parse(string &s);
 
 
 	static std::string &ltrim(std::string &s) {
@@ -52,5 +51,6 @@ public:
 
 private:
 	void ChangeStatus(string &s, int &status);
+	void Parse(string &s);
 };
 

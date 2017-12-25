@@ -45,7 +45,10 @@
     <ClInclude Include="MillerRabinTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="APArithmetic.h">
+    <ClInclude Include="BigInteger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,7 +83,10 @@
     <ClCompile Include="MillerRabinTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="APArithmetic.cpp">
+    <ClCompile Include="BigInteger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

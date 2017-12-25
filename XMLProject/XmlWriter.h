@@ -16,5 +16,6 @@ public:
 	~XmlWriter();
 
 	void Write(std::vector<uint> &vec);
+	void Write(std::string &s);
 };
 
