@@ -1,0 +1,6 @@
+﻿  unittest1.cpp
+c:\users\dell\source\repos\xmlproject\xmlproject\biginteger.h(16): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+c:\users\dell\source\repos\xmlproject\bigintegertests\unittest1.cpp(43): warning C4244: 'argument': conversion from 'unsigned __int64' to 'const int', possible loss of data
+c:\users\dell\source\repos\xmlproject\bigintegertests\unittest1.cpp(65): warning C4244: 'argument': conversion from 'unsigned __int64' to 'const int', possible loss of data
+c:\users\dell\source\repos\xmlproject\bigintegertests\unittest1.cpp(177): warning C4244: '=': conversion from 'double' to 'unsigned __int64', possible loss of data
+  BigIntegerTests.vcxproj -> C:\Users\Dell\source\repos\XMLProject\Debug\BigIntegerTests.dll

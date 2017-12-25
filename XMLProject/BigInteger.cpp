@@ -2,7 +2,6 @@
 #include "BigInteger.h"
 
 
-//Constructor
 BigInteger::BigInteger()
 {
 	positive = true;
@@ -58,7 +57,6 @@ BigInteger::BigInteger(std::string stringInteger)
 	}
 }
 
-//Adding
 BigInteger BigInteger::operator+(BigInteger const &b) const
 {
 	BigInteger c = *this;
@@ -132,7 +130,6 @@ BigInteger &BigInteger::operator+=(long long b)
 	return *this;
 }
 
-//Subtraction
 BigInteger BigInteger::operator-(BigInteger const &b) const
 {
 	BigInteger c = *this;
@@ -181,7 +178,6 @@ BigInteger &BigInteger::operator-=(BigInteger const &b)
 	return *this;
 }
 
-//Multiplication
 BigInteger BigInteger::operator*(BigInteger const &b)
 {
 	if (b.number.size() == 1) return *this *= b.number[0];
@@ -246,7 +242,6 @@ int BigInteger::operator%(int const & divisor)
 		return -remains + divisor;
 }
 
-//Power
 BigInteger BigInteger::pow(int const &power, std::map<int, BigInteger> &lookup)
 {
 	if (power == 1) return *this;
@@ -264,6 +259,10 @@ BigInteger BigInteger::pow(int const &power, std::map<int, BigInteger> &lookup)
 
 BigInteger &BigInteger::pow(int const &power)
 {
+	if (power == 0)
+	{
+		return *(new BigInteger(1));
+	}
 	std::map<int, BigInteger> lookup;
 	if (power % 2 == 0 && !positive) {
 		positive = true;
@@ -273,7 +272,6 @@ BigInteger &BigInteger::pow(int const &power)
 	return *this;
 }
 
-//Compare
 int BigInteger::compare(const BigInteger &a) const //0 this == a || -1 this < a || 1 this > a
 {
 	if (positive && !a.positive) return 1;
@@ -326,7 +324,6 @@ bool BigInteger::operator!=(BigInteger const &b) const
 	return !(*this == b);
 }
 
-//Allocation
 BigInteger BigInteger::operator=(const long long &a)
 {
 	number.clear();
@@ -339,13 +336,11 @@ BigInteger BigInteger::operator=(const long long &a)
 	return *this;
 }
 
-//Access
 int BigInteger::operator[](int const &b)
 {
 	return to_string(*this)[b] - '0';
 }
 
-//Trivia
 int BigInteger::digits() const
 {
 	int segments = number.size();
@@ -378,7 +373,6 @@ int BigInteger::trailing_zeros() const
 	return zeros;
 }
 
-//Helpers
 void BigInteger::clear()
 {
 	number.clear();
@@ -393,7 +387,6 @@ BigInteger &BigInteger::abs()
 	return *this;
 }
 
-//Input&Output
 std::ostream &operator<<(std::ostream &out, BigInteger const &a)
 {
 	if (!a.number.size()) return out << 0;
@@ -422,6 +415,28 @@ std::istream &operator>>(std::istream &in, BigInteger &a)
 	a = str;
 
 	return in;
+}
+
+std::string BigInteger::ToString()
+{
+	std::string result = "";
+	BigInteger a = *this;
+	if (!a.number.size()) return "0";
+	int i = a.number.size() - 1;
+	for (; i >= 0 && a.number[i] == 0; --i);
+
+	if (i == -1) return "0";
+	if (!a.positive) result += "-";
+
+	std::vector<int>::const_reverse_iterator it = a.number.rbegin() + (a.number.size() - i - 1);
+
+	result += std::to_string(*it++);
+	for (; it != a.number.rend(); ++it) {
+		for (int i(0), len = a.segment_length(*it); i < 9 - len; ++i) result += "0";
+		if (*it) result += std::to_string(*it);
+	}
+
+	return result;
 }
 
 int BigInteger::segment_length(int segment) const

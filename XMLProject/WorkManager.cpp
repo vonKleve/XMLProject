@@ -11,8 +11,6 @@ WorkManager::~WorkManager()
 {
 }
 
-#include <iostream>
-
 void WorkManager::Run(std::string from, std::string to)
 {
 	Intervals intrls;
