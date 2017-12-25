@@ -10,4 +10,12 @@
       </high>
     </interval>
     </intervals>
+    <interval>
+      <low>500</low>
+      <high>1500</high>
+    </interval>
+    <interval>
+      <low>0</low>
+      <high>100</high>
+    </interval>
   </root>

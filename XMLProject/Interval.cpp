@@ -4,12 +4,12 @@
 
 void Interval::SetLow(uint low)
 {
-	low_ = low;
+	low_ = low < high_ ? low : high_;
 }
 
 void Interval::SetHigh(uint high)
 {
-	high_ = high;
+	high_ = high > low_ ? high_ : low_;
 }
 
 void Interval::GeneratePrimes(ThreadSafeSet<uint> & set)

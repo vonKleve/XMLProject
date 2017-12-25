@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractInterval.h" />
     <ClInclude Include="BigInteger.h" />
+    <ClInclude Include="ESieve.h" />
     <ClInclude Include="MillerRabinTest.h" />
     <ClInclude Include="ThreadSafeSet.h" />
     <ClInclude Include="Interval.h" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractInterval.cpp" />
     <ClCompile Include="BigInteger.cpp" />
+    <ClCompile Include="ESieve.cpp" />
     <ClCompile Include="MillerRabinTest.cpp" />
     <ClCompile Include="ThreadSafeSet.cpp" />
     <ClCompile Include="Interval.cpp" />

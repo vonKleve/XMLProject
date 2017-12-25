@@ -5,6 +5,7 @@
 #include <condition_variable>
 #include <set>
 #include <string>
+#include <vector>
 
 
 template<typename T>
@@ -39,9 +40,18 @@ public:
 		return res;
 	}
 
+	std::vector<T> ToVector()
+	{
+		std::vector<T> result= std::vector<T>();
+		for (auto it : set_)
+		{
+			result.emplace_back(it);
+		}
+		return result;
+	}
+
 private:
 	std::set<T> set_;
 	std::mutex mutex_;
 	std::condition_variable cond_;
 };
-

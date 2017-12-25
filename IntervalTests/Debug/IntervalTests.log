@@ -1,0 +1,7 @@
+﻿  unittest1.cpp
+c:\users\dell\source\repos\xmlproject\xmlproject\biginteger.h(16): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+c:\users\dell\source\repos\xmlproject\xmlproject\millerrabintest.h(21): warning C4244: 'initializing': conversion from 'double' to '__int64', possible loss of data
+c:\users\dell\source\repos\xmlproject\xmlproject\millerrabintest.h(58): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\dell\source\repos\xmlproject\xmlproject\millerrabintest.h(63): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\dell\source\repos\xmlproject\xmlproject\millerrabintest.h(66): warning C4018: '<': signed/unsigned mismatch
+  IntervalTests.vcxproj -> C:\Users\Dell\source\repos\XMLProject\Debug\IntervalTests.dll
